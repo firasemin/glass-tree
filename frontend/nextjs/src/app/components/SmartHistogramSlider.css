@@ -1,0 +1,84 @@
+/* SmartHistogramSlider.css */
+
+.smart-slider-container {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    background-color: #f9fafb;
+    /* gray-50 */
+    border-radius: 6px;
+    overflow: hidden;
+    /* Border matching buttons */
+    border: 1px solid #e5e7eb;
+    user-select: none;
+}
+
+/* Layer 1: SVG Histogram */
+.histogram-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.histogram-bar {
+    transition: fill 0.1s linear, height 0.3s ease;
+    /* Slight gap is handled by width calculation or x positioning in JS, 
+       but we can use shape-rendering for crisp edges or gap implementation */
+}
+
+/* Layer 2: Input Range (Invisible Interaction Layer) */
+.slider-input-range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    cursor: col-resize;
+    z-index: 3;
+}
+
+/* Custom Visual Handle */
+.slider-handle-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    /* Positioned by 'left' style */
+    z-index: 2;
+    pointer-events: none;
+    will-change: left;
+}
+
+.slider-cut-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* Centered on container's 0 width point */
+    width: 2px;
+    background-color: #374151;
+    /* gray-700, visible cut line */
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.slider-handle-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    /* gray-300 */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

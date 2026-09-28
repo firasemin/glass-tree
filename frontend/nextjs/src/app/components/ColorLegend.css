@@ -1,0 +1,68 @@
+.color-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 220px;
+
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 16px;
+
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Make click-through if just informational, or auto if interactive */
+    user-select: none;
+}
+
+.legend-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 8px;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient bar for Purity */
+.purity-gradient {
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #6a994e, #fca311, #780000);
+    margin-bottom: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.purity-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #666;
+}

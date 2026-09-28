@@ -1,0 +1,12 @@
+fastapi~=0.118.0
+fastapi-versioning~=0.10.0
+uvicorn[standard]~=0.37.0
+pydantic~=2.11.7
+
+# ML dependencies for decision tree generation
+scikit-learn~=1.6.0
+pandas~=2.2.0
+numpy~=2.2.0
+
+# Shared schemas (install as editable in development)
+# pip install -e ../shared

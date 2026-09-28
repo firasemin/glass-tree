@@ -1,0 +1,67 @@
+services:
+  postgres:
+    container_name: fullstack-reference-project_postgres
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tree_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  microservice:
+    container_name: fullstack-reference-project_microservice
+    image: fullstack-reference-project_microservice:latest
+    build:
+      context: ./microservice/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    container_name: fullstack-reference-project_frontend
+    image: fullstack-reference-project_frontend:latest
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./frontend/http:/http
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    container_name: fullstack-reference-project_backend
+    image: fullstack-reference-project_backend:latest
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+      target: base
+    volumes:
+      - ./backend/http:/http
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      microservice:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/tree_db
+      - MICROSERVICE_URL=http://microservice:8081
+
+volumes:
+  postgres_data:

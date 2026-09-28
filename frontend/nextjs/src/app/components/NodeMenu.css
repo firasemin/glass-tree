@@ -1,0 +1,281 @@
+.node-toolbox-container {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.node-toolbox-header {
+    grid-column: 1 / -1;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+}
+
+.node-info-list {
+    font-size: 0.9rem;
+    color: #374151;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.node-info-label {
+    font-weight: 600;
+    color: #111;
+}
+
+.node-toolbox-form {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* NEW: Block layout for Feature selection (Label on top) */
+.feature-selection-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+.node-info-label.feature-label {
+    font-size: 1rem; /* Slightly larger for header style */
+    margin-left: 2px;
+}
+
+.node-toolbox-select {
+    flex: 1;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #333533;
+    background-color: white;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.slider-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.slider-input {
+    width: 100%;
+    cursor: pointer;
+}
+
+.input-action-row {
+    display: flex;
+    gap: 8px;
+}
+
+.node-toolbox-input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid #333533;
+}
+
+.node-toolbox-save-button {
+    background: #455E89;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0 12px;
+}
+
+.outcome-section {
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+.outcome-toggle-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.outcome-button {
+    padding: 12px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.outcome-button.no-disease {
+    border: 2px solid #0eaa88;
+    color: #0eaa88;
+    background: transparent;
+}
+
+.outcome-button.no-disease.active {
+    background: #0eaa88;
+    color: white;
+}
+
+.outcome-button.disease {
+    border: 2px solid #c9184a;
+    color: #c9184a;
+    background: transparent;
+}
+
+.outcome-button.disease.active {
+    background: #c9184a;
+    color: white;
+}
+
+.toolbox-actions {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.action-button {
+    padding: 8px;
+    background: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.action-button.add-child {
+    border: 1px solid #455E89;
+    color: #455E89;
+}
+
+.toolbox-actions .action-button.add-child {
+    grid-column: auto;
+}
+
+.action-button.cut {
+    border: 1px solid #455E89;
+    color: #455E89;
+}
+
+.action-button.move {
+    border: 1px solid #455E89;
+    color: #455E89;
+}
+
+.action-button.delete {
+    border: 1px solid #c9184a;
+    color: #c9184a;
+}
+
+.action-button.delete:hover {
+    border-color: #c9184a !important;
+    background-color: #fbdae4 !important;
+}
+
+/* --- Radix UI Select Styling --- */
+
+.SelectTrigger {
+    /* Full Width */
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    height: 35px;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: #111;
+    background-color: white;
+    border: 1px solid #333533;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box; /* Important for width: 100% */
+}
+
+.SelectTrigger:hover {
+    background-color: #f9fafb;
+}
+
+.SelectTrigger:focus {
+    outline: none;
+    border-color: #455E89;
+    box-shadow: 0 0 0 2px rgba(69, 94, 137, 0.2);
+}
+
+.SelectIcon {
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.SelectContent {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 
+                0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+    z-index: 1000;
+    min-width: var(--radix-select-trigger-width); /* Match trigger width */
+    max-height: var(--radix-select-content-available-height);
+}
+
+.SelectViewport {
+    padding: 5px;
+}
+
+.SelectItem {
+    font-size: 0.9rem;
+    line-height: 1;
+    color: #111;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 35px 0 25px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.SelectItemIndicator {
+    position: absolute;
+    left: 5px;
+    width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectItem[data-highlighted] {
+    background-color: #455E89;
+    color: white;
+    outline: none;
+}
+
+.SelectScrollButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #455E89;
+    cursor: default;
+}

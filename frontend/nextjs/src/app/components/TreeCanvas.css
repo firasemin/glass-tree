@@ -1,0 +1,67 @@
+.react-flow__node-default {
+    background-color: #FAFAFA;
+
+    /* Clean, neutral grey border to start */
+    border: 1px solid #595959;
+
+    /* Standard rounding */
+    border-radius: 8px;
+
+    /* Typography */
+    color: #595959;
+    /* Dark grey, not pitch black */
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); */
+}
+
+/* 2. HOVER STATE - "I am interactable" */
+.react-flow__node-default:hover {
+    /* Increase shadow to "lift" it visually without moving the DOM element */
+    box-shadow: none !important;
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+/* 3. SELECTED STATE - "I am active" */
+.react-flow__node-default.selected {
+    /* 1. Remove default focus ring/shadow */
+    box-shadow: none !important;
+    border: 1px solid #0096C7;
+    background-color: #CAF0F8;
+}
+
+/* 4. GHOST STATE - "I am irrelevant" */
+.react-flow__node.ghost-node {
+    box-shadow: none !important;
+    opacity: 0.3;
+    border: 1px dashed #595959;
+    background-color: #FAFAFA;
+}
+
+.react-flow__node.ghost-node.react-flow__node-default.selected {
+    opacity: 1;
+}
+
+.react-flow__node.ghost-node:hover {
+    opacity: 0.6;
+}
+
+.react-flow__handle {
+    opacity: 0;
+}
+
+h2 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+h3 {
+    margin: 0px 0 10px 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 15px;
+}

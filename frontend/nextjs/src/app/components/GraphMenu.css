@@ -1,0 +1,144 @@
+.graph-menu {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 2px solid rgba(0, 0, 0, 0.1);
+
+  border-radius: 20px;
+
+  padding: 16px;
+  width: 300px;
+  transition: all 0.2s ease;
+}
+
+.graph-menu-header {
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  border-radius: 15px;
+
+  margin-bottom: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.graph-menu-header:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.graph-menu-content {
+  margin-top: 4px;
+  padding: 8px 4px;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.stat-badge {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-family: monospace;
+  font-weight: 600;
+  color: #111;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.action-button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  background-color: white;
+
+  border: 1px solid #455E89;
+
+  border-radius: 15px;
+
+  color: #455E89;
+  cursor: pointer;
+  flex: 1;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.action-button:hover:not(:disabled) {
+  border: 1px solid #455E89;
+  background-color: #f0f4ff;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-button.reset-tree {
+  background-color: #fee2e2;
+  border-color: #c9184a;
+  color: #c9184a;
+}
+
+.action-button.reset-tree:hover:not(:disabled) {
+  background-color: #fbdae4 !important;
+  border-color: #c9184a !important;
+}
+
+.history-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #666;
+  padding: 4px 8px;
+  min-height: 20px;
+}
+
+.saving-indicator {
+  color: #f59e0b;
+  font-weight: 500;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

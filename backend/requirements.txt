@@ -1,0 +1,20 @@
+fastapi~=0.118.0
+uvicorn[standard]~=0.37.0
+pydantic~=2.11.7
+
+# Database
+sqlalchemy[asyncio]~=2.0.0
+asyncpg~=0.30.0
+alembic~=1.14.0
+
+# HTTP client for microservice calls
+httpx~=0.28.0
+
+
+# Shared schemas (install as editable in development)
+# pip install -e ../shared
+
+numpy
+pandas~=2.2.0
+scikit-learn~=1.4.0
+matplotlib~=3.8.0
